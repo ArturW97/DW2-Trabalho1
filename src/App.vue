@@ -21,6 +21,7 @@ margin: 0px;
 padding: 0px;
 font-family: sans-serif
 }
+
 .container {
 width: 100%;
 max-width: 960px;
