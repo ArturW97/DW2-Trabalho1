@@ -7,7 +7,15 @@
         <div class="container banner__content">
             <div class="row">
                 <div class="col-md-10">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                    <p>Vivamus nec elit eget nulla aliquet eleifend. Praesent finibus pulvinar dolor vel ornare. 
+                        Proin imperdiet ipsum quis mauris viverra rhoncus. Aliquam sit amet lacus molestie, 
+                        faucibus elit nec, consequat massa. Aenean tincidunt eros at felis consectetur, in 
+                        sodales sem sagittis. Praesent condimentum magna sit amet libero cursus, id porttitor 
+                        mi tincidunt. Praesent eleifend quis mauris porta hendrerit. Donec faucibus nulla non 
+                        erat viverra, vitae ornare risus tincidunt. Vestibulum et dignissim dolor, sed eleifend 
+                        odio. Vestibulum sit amet libero felis. In commodo turpis eget gravida ornare. 
+                        Suspendisse auctor tellus vitae erat aliquam volutpat. Nam placerat interdum arcu, eget 
+                        tincidunt odio ullamcorper nec. Donec at ipsum ut nisi commodo condimentum.</p>
                     <button>Discografia</button>
                 </div>
             </div>
@@ -78,5 +86,6 @@
         font-size: 20px;
         line-height: 25px;
         color: rgb(34, 34, 34);
+        font-weight: bold;
     }
 </style>
