@@ -1,32 +1,18 @@
 <template>
   <div id="app">
-    <Header />
-    <Banner />
-    <Discografia />
-    <Citacao />
+    <router-view />
   </div>
 </template>
 
 <script>
-import Header from "./components/Header.vue";
-import Banner from "./components/Banner.vue";
-import Discografia from "./components/Discografia.vue";
-import Citacao from "./components/Citacao.vue";
 
 export default {
-  name: "App",
-  components: {
-    Header,
-    Banner,
-    Discografia,
-    Citacao,
-  },
-};
+  name: 'App',
+}
 </script>
 
 <style>
-html,
-body {
+html, body {
   margin: 0px;
   padding: 0px;
   font-family: sans-serif;
@@ -76,7 +62,6 @@ body {
   width: calc(960px / 12 * 6);
   box-sizing: border-box;
   padding: 0px 10px;
-  color: white;
 }
 .col-md-7 {
   width: calc(960px / 12 * 7);
@@ -103,7 +88,7 @@ body {
   box-sizing: border-box;
   padding: 0px 10px;
 }
-.col-md-12ß {
+.col-md-12 {
   width: calc(960px / 12 * 12);
   box-sizing: border-box;
   padding: 0px 10px;
