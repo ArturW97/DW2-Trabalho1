@@ -5,6 +5,7 @@
     <Discografia />
     <Citacao />
     <Agenda />
+    <NewsHome />
   </div>
 </template>
 <script>
@@ -13,6 +14,7 @@ import Banner from "../components/Banner.vue";
 import Discografia from "../components/Discografia.vue";
 import Citacao from "../components/Citacao.vue";
 import Agenda from "../components/Agenda.vue";
+import NewsHome from "../components/NewsHome.vue";
 
 export default {
   name : "Home",
@@ -22,6 +24,7 @@ export default {
     Discografia,
     Citacao,
     Agenda,
+    NewsHome
   }
 }
 </script>
