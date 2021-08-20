@@ -8,7 +8,7 @@
       </div>
       <div class="row">
         <div
-          v-for="myNew in news"
+          v-for="myNew in newsFiltered"
           :key="myNew.id"
           :class="{ 'col-md-12': myNew.id === 1, 'col-md-6': myNew.id !== 1 }"
         >
@@ -16,11 +16,16 @@
             <img :src="myNew.img" />
             <h3>{{ myNew.title }}</h3>
             <p>{{ myNew.text }}</p>
-            <router-link :to="{name: 'noticiasDetalhe', params: {id : myNew.id}}"><span>Leia mais</span></router-link>
+            <router-link
+              :to="{ name: 'noticiasDetalhe', params: { id: myNew.id } }"
+              ><span>Leia mais</span></router-link
+            >
           </div>
         </div>
-        <div class="col-md-12">
-          <router-link to="/noticias" class="news__btn"><button>Veja mais</button></router-link>
+        <div class="col-md-12" v-if="isButton">
+          <router-link to="/noticias" class="news__btn"
+            ><button>Veja mais</button></router-link
+          >
         </div>
       </div>
     </div>
@@ -28,7 +33,10 @@
 </template>
 <script>
 export default {
-  name: "NewsHome",
+  name: "NewsComponent",
+  props: {
+    isButton: Boolean,
+  },
   data: function() {
     return {
       news: [
@@ -60,6 +68,18 @@ when an unknown printer took a galley of type and scrambled it to make a type sp
       ],
     };
   },
+  computed: {
+    newsFiltered: function() {
+      const news = this.news;
+
+      if (this.isButton) {
+        //Filtrar 3 elementos do array e retornar
+        return news.slice(0,3);
+      }
+
+      return news;
+    },
+  },
 };
 </script>
 <style>
@@ -87,21 +107,21 @@ when an unknown printer took a galley of type and scrambled it to make a type sp
 .news__box {
   margin-bottom: 30px;
 }
-.news button{
-   width: 170px;
-   height: 40px;
-   cursor: pointer;
-   background: #C3121C;
-   color: #212121;
-   border-radius: 6px;
-   border: none;
-   font-weight: bold;
- }
+.news button {
+  width: 170px;
+  height: 40px;
+  cursor: pointer;
+  background: #c3121c;
+  color: #212121;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+}
 .news__btn {
-    display: block;
-    text-align: center;
-    margin: 30px auto;
-    width: 170px;
-    height: 40px;
+  display: block;
+  text-align: center;
+  margin: 30px auto;
+  width: 170px;
+  height: 40px;
 }
 </style>

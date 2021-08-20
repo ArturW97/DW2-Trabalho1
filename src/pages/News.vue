@@ -1,21 +1,20 @@
 <template>
     <div>
-        <Header />
-        <Banner />
-        <h2>Aqui é minha página de notícias</h2>
-    </div>
+      <Header />
+      <main>
+        <NewsComponent :isButton="false" />
+      </main>
+  </div>
 </template>
 <script>
-    import Header from "../components/Header.vue";
-    import Banner from "../components/Banner.vue";
+import Header from "../components/Header.vue";
+import NewsComponent from "../components/NewsComponent.vue";
 export default {
-    name : "News",
-    components : {
-        Header,
-        Banner
-    }
-}
+  name: "News",
+  components: {
+    Header,
+    NewsComponent,
+  },
+};
 </script>
-<style>
-    
-</style>
+<style></style>
