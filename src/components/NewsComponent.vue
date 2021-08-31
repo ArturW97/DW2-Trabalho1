@@ -23,9 +23,9 @@
           </div>
         </div>
         <div class="col-md-12" v-if="isButton">
-          <router-link to="/noticias" class="news__btn"
-            ><button>Veja mais</button></router-link
-          >
+          <router-link to="/noticias" class="news__btn">
+            <button>Veja mais</button>
+          </router-link>
         </div>
       </div>
     </div>

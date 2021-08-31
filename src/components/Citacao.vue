@@ -9,7 +9,7 @@
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it to make a type specimen book. “
           </p>
-          <p class="citacao__author">(Mano Bronw)</p>
+          <p class="citacao__author">(Mano Brown)</p>
         </div>
       </div>
     </div>
@@ -22,6 +22,7 @@ export default {
 </script>
 <style>
 .citacao {
+  padding-top: 50px;
   background-color: #0a0a0a;
   width: 100%;
   height: 255px;
