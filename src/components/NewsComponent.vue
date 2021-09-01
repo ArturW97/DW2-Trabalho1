@@ -17,7 +17,7 @@
             <h3>{{ myNew.title }}</h3>
             <p>{{ myNew.text }}</p>
             <router-link
-              :to="{ name: 'noticiasDetalhe', params: { id: myNew.id } }"
+              :to="{ name: 'noticiasDetalhe', params: { id: myNew._id } }"
               ><span>Leia mais</span></router-link
             >
           </div>
@@ -37,44 +37,37 @@ export default {
   props: {
     isButton: Boolean,
   },
-  data: function() {
+  data: function () {
     return {
-      news: [
-        {
-          id: 1,
-          title: "Lorem Ipsum is",
-          text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-when an unknown printer took a galley of type and scrambled it to make a type specimen book. `,
-          img: require("../assets/news1.jpg"),
-        },
-        {
-          id: 2,
-          title: "Lorem Ipsum is",
-          text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-when an unknown printer took a galley of type and scrambled it to make a type specimen book. `,
-
-          img: require("../assets/news1.jpg"),
-        },
-        {
-          id: 3,
-          title: "Lorem Ipsum is",
-          text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-when an unknown printer took a galley of type and scrambled it to make a type specimen book. `,
-          img: require("../assets/news1.jpg"),
-        },
-      ],
+      news: [],
     };
   },
+
+  methods: {
+    getNews: async function () {
+      const result = await fetch("http://localhost:3000/noticias")
+        .then((res) => res.json())
+        .catch((error) => {
+          return {
+            error: true,
+            message: error,
+          };
+        });
+      if (!result.error) {
+        this.news = result;
+      }
+    },
+  },
+  created: function () {
+    this.getNews();
+  },
   computed: {
-    newsFiltered: function() {
+    newsFiltered: function () {
       const news = this.news;
 
       if (this.isButton) {
         //Filtrar 3 elementos do array e retornar
-        return news.slice(0,3);
+        return news.slice(0, 3);
       }
 
       return news;
